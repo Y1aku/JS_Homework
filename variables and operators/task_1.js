@@ -33,3 +33,11 @@ const item_4 = "Hello World";
 // Вывести в консоль item_4
 
 console.log(item_4);
+
+// Вывести в консоль сложение item_3 и item_4
+
+console.log(item_3 + item_4);
+
+// Вывести в консоль умножение item_3 и item_4
+
+console.log(item_3 * item_4);
