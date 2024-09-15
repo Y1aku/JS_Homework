@@ -24,3 +24,12 @@ const item_3 = item_1 + item_2;
 // Вывести в консоль item_3
 
 console.log(item_3);
+
+// Создать переменную “item_4”
+// Присвоить переменной item_4 строку "Hello World"
+
+const item_4 = "Hello World";
+
+// Вывести в консоль item_4
+
+console.log(item_4);
