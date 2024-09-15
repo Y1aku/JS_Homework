@@ -6,3 +6,12 @@ const item_1 = 5;
 // Вывести в консоль item_1
 
 console.log(item_1);
+
+// Создать переменную “item_2”
+// Присвоить переменной item_2 цифру 3
+
+const item_2 = 3;
+
+// Вывести в консоль item_2
+
+console.log(item_2);
