@@ -46,3 +46,15 @@ console.log(item_3 * item_4);
 // Присвоить переменной item_5 переменную item_3
 
 const item_5 = item_3;
+
+// Создать переменную item_6
+// Создать переменную item_6_type
+// Присвоить переменной item_6 значение 15
+// Присвоить переменной item_6_type тип переменной item_6
+
+const item_6 = 15;
+const item_6_type = typeof item_6;
+
+// Вывести в консоль тип данных item_6 в виде ——  “item_6 == ”  item_6,  “item_6_type == ”  item_6_type —— 
+
+console.log("item_6 ==", item_6, "item_6_type ==", item_6_type);
