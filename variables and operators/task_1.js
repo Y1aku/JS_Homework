@@ -41,3 +41,8 @@ console.log(item_3 + item_4);
 // Вывести в консоль умножение item_3 и item_4
 
 console.log(item_3 * item_4);
+
+// Создать переменную “item_5”
+// Присвоить переменной item_5 переменную item_3
+
+const item_5 = item_3;
