@@ -6,11 +6,7 @@ const maxValue = 10;
 const minValue = 0;
 
 for (let i = maxValue; i >= minValue; i--) {
-    let divideIntoTwo = (i / 2).toString();
-    // console.log(typeof divideIntoTwo, divideIntoTwo);
-    let evenNum = divideIntoTwo.includes('.');
-    // console.log(evenNum);
-    if (evenNum === false) {
+    if (i % 2 === 0) {
         console.log(i);
     }
 }
