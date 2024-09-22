@@ -11,21 +11,11 @@ const maxValue = 100;
 const minValue = 1;
 
 for (let i = minValue; i <= maxValue; i++) {
-    // console.log("i равно - "+ i);
-    let divideIntoThree = (i / 3).toString();
-    // console.log("i / 3 = " + divideIntoThree);
-    let divisibleByThree = !divideIntoThree.includes('.');
-    // console.log("i делится на 3 - " + divisibleByThree);
-    let divideIntoFive = (i / 5).toString();
-    // console.log("i / 5 = " + divideIntoFive);
-    let divisibleByFive = !divideIntoFive.includes('.');
-    // console.log("i делится на 5 - " + divisibleByFive);
-
-    if (divisibleByThree && divisibleByFive) {
+    if (i % 3 === 0 && i % 5 === 0) {
         console.log(`Число ${i} делится без остатка и на 3, и на 5.`);
-    } else if (divisibleByThree) {
+    } else if (i % 3 === 0) {
         console.log(`Число ${i} делится без остатка на 3.`);
-    } else if (divisibleByFive) {
+    } else if (i % 5 === 0) {
         console.log(`Число ${i} делится без остатка на 5.`);
     } else {
         console.log(i);
