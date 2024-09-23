@@ -11,7 +11,7 @@ let age;
 
 age = "60"
 
-if (typeof age != "number" && isNaN(age) == false) {
+if (typeof age != "number" && !isNaN(age)) {
     age = +age;
     console.log(`Your age is ${age}`);
 } else if (age < minAge) {
