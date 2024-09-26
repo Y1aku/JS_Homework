@@ -34,3 +34,14 @@ arrayOfTask2.unshift(0);
 arrayOfTask2.splice(2, 1);
 arrayOfTask2.pop();
 console.log(arrayOfTask2);
+
+/*
+Создайте массив из 5 любых чисел (придумать числа самим)
+- Через деструктуризацию получите в новые переменные первый, второй и остальные элементы массива
+- Пример: [1,2,3,4,5] => first === 1; second === 2, rest === [3,4,5]
+*/
+
+const arrayOfTask3 = [17, 24, 0, 2, 96];
+
+const [first, second, ...rest] = arrayOfTask3;
+console.log(first, second, rest);
