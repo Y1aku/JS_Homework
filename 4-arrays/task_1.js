@@ -45,3 +45,15 @@ const arrayOfTask3 = [17, 24, 0, 2, 96];
 
 const [first, second, ...rest] = arrayOfTask3;
 console.log(first, second, rest);
+
+/*
+Создайте массив с числами [1,2,3,4,5]
+- Создайте еще 1 массив с числами [6, 7, 8, 9, 10]
+- Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
+- Используйте спред оператор
+*/
+
+const arrayOfTask4 = [1,2,3,4,5];
+const arrayOfTask4_2 = [6,7,8,9,10];
+let mergedArray = [...arrayOfTask4, ...arrayOfTask4_2];;
+console.log(mergedArray);
