@@ -13,23 +13,16 @@ const myPizzas = ['BytePizza', 'SyntaxError', 'BufferPizza', 'diablo', 'ReactPiz
 // const myPizzas = ['diablo'];
 const myUniquePizzas = [];
 
+for (let i = 0; i < competitorPizzas.length; i++) {
+    competitorPizzas.splice(competitorPizzas.indexOf(competitorPizzas[i]), 1, competitorPizzas[i].toLowerCase());
+}
+
 for (let i = 0; i < myPizzas.length; i++) {
 
     const myPizza = myPizzas[i].toLowerCase();
-    let found = false;
 
-    for (let j = 0; j < competitorPizzas.length; j++) {
-
-        const competitorPizza = competitorPizzas[j].toLowerCase();
-
-        if (myPizza === competitorPizza) {
-            found = true;
-            break;
-        }
-    }
-
-    if(!found) {
-        myUniquePizzas.push(myPizzas[i]);
+    if (!competitorPizzas.includes(myPizza)) {
+        myUniquePizzas.push(myPizza);
     }
 }
 
