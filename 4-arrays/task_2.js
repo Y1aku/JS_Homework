@@ -9,17 +9,32 @@
 */
 
 const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
-const myPizza = ['BytePizza', 'SyntaxError', 'BufferPizza', 'Diablo', 'ReactPizza'];
-const samePizzas = [];
+const myPizzas = ['BytePizza', 'SyntaxError', 'BufferPizza', 'diablo', 'ReactPizza'];
+// const myPizzas = ['diablo'];
+const myUniquePizzas = [];
 
-for (const pizza of competitorPizzas) {
-    if (myPizza.includes(pizza)) {
-        samePizzas.push(pizza);
+for (let i = 0; i < myPizzas.length; i++) {
+
+    const myPizza = myPizzas[i].toLowerCase();
+    let found = false;
+
+    for (let j = 0; j < competitorPizzas.length; j++) {
+
+        const competitorPizza = competitorPizzas[j].toLowerCase();
+
+        if (myPizza === competitorPizza) {
+            found = true;
+            break;
+        }
+    }
+
+    if(!found) {
+        myUniquePizzas.push(myPizzas[i]);
     }
 }
 
-if (samePizzas.length === 0) {
+if (myUniquePizzas.length === 0) {
     console.log(null);
 } else {
-    console.log(samePizzas);
+    console.log(myUniquePizzas);
 }
