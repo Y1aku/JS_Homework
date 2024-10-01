@@ -27,21 +27,22 @@ console.log(spreadArrays(...mergeArrays));
 -  Пример: I am super engineer => i_Am_Super_Engineer
 */
 
-const sentence = "I am super engineer";
+// const sentence = "I am super engineer";
+const sentence = "I aM sUpEr enGineer";
 
 function changeSentence(input) {
     const newSentence = input.split(" ");
     for (let i = 0; i < newSentence.length; i++) {
         if (i === 0) {
-            newSentence[i] = newSentence[i][i].toLowerCase() + newSentence[i].slice(1);
+            newSentence[i] = newSentence[i][i].toLowerCase() + newSentence[i].toLowerCase().slice(1);
         } else {
-            newSentence[i] = newSentence[i][0].toUpperCase() + newSentence[i].slice(1);
+            newSentence[i] = newSentence[i][0].toUpperCase() + newSentence[i].toLowerCase().slice(1);
         }
     }
     return newSentence.join("_");
 }
 
-// console.log(changeSentence(sentence));
+console.log(changeSentence(sentence));
 
 /*
 Напишите функцию fibanacci(n), возвращающую энное число Фибоначчи
@@ -67,7 +68,5 @@ function findElementOfFibanacci(n) {
         return sum;
     }
 }
-    
-    
 
 console.log(findElementOfFibanacci(8));
