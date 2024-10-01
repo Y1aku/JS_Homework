@@ -5,20 +5,20 @@
 -  Решить с использованием Spread operator
 */
 
-// const mergeArrays = [[1, 2], [3, 4], [5, 6]];
+const mergeArrays = [[1, 2], [3, 4], [5, 6]];
 
-// function spreadArrays(...arrays) {
+function spreadArrays(...arrays) {
 
-//     const newArray = [];
+    const newArray = [];
 
-//     for (const array of arrays) {
-//         newArray.push(...array);
-//     }
+    for (const array of arrays) {
+        newArray.push(...array);
+    }
 
-//     return newArray;
-// }
+    return newArray;
+}
 
-// console.log(spreadArrays(...mergeArrays));
+console.log(spreadArrays(...mergeArrays));
 
 
 /*
@@ -43,3 +43,23 @@ function changeSentence(input) {
 
 console.log(changeSentence(sentence));
 
+/*
+Напишите функцию fibanacci(n), возвращающую энное число Фибоначчи
+-  числа Фибоначчи (строка Фибоначчи) — числовая последовательность, первые два числа которой являются 0 и 1,
+а каждое последующее за ними число является суммой двух предыдущих
+-  Например fibanacci(8) //21
+*/
+
+function findElementOfFibanacci(n) {
+    let firstValueOfSum = 0;
+    let secondValueOfSum = 1;
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+        sum = secondValueOfSum + firstValueOfSum;
+        firstValueOfSum = secondValueOfSum;
+        secondValueOfSum = sum;
+    }
+    return sum;
+}
+
+console.log(findElementOfFibanacci(7));
