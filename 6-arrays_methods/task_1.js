@@ -14,7 +14,7 @@ arr.forEach((element) => {
 // 2. map - создайте новый массив, в котором из каждого элемента изначального массива вычли длину изначального массива 
 // [-3, -2, -8, 20, 75, 85, 67, 84, 27, 21]
 
-const arrayForMap = arr.map((element) => element - arr.length);
+const arrayForMap = arr.map((element, i, initialArr) => element - initialArr.length);
 
 console.log(arrayForMap);
 
