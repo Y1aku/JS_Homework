@@ -9,3 +9,10 @@
 [1,2,2,3,3,3,4,3,3,3,2,2,1] должно возвращать 4, потому что оно появляется 1 раз
 */
 
+const array = [1,2,2,3,3,3,4,3,3,3,2,2,1];
+
+function getOdd(arr) {
+	return arr.find((element, index, array) => array.filter(number => element === number).length % 2);
+}
+
+console.log(getOdd(array));
