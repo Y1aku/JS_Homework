@@ -6,10 +6,24 @@
 
 // Решение 1
 
+// const arr = [123, 542, 968, 352, 1, 308];
+
+// function getGreatestTransformedNumbers(arr) {
+// 	return arr.map((element, index, array) => createMaxNumber(element));
+// }
+
+// function createMaxNumber(number) {
+// 	return +[...number.toString()].sort((a, b) => +b - +a).join("");
+// }
+
+// console.log(getGreatestTransformedNumbers(arr));
+
+// Решение 2
+
 const arr = [123, 542, 968, 352, 1, 308];
 
 function getGreatestTransformedNumbers(arr) {
-	return arr.map((element, index, array) => createMaxNumber(element));
+	return arr.map(createMaxNumber);
 }
 
 function createMaxNumber(number) {
