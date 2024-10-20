@@ -69,19 +69,35 @@
 
 // Решение 1 с урока
 
+// const arrayOfNames = ["Anatoly", "Maria", "Pavel", "Svetlana"];
+// const arrayOfSalaries = [1000, 2000, 500, 0];
+// const arrayOfProfessions = ["AQA", "Developer", "DevOps", "QA"];
+
+// function getArrayOfObjects(names, salaries, professions) {
+// 	return names.map((name, index) => ({
+// 		name,
+// 		salary: salaries[index],
+// 		profession: professions[index]
+// 	}));
+// }
+
+// console.log(getArrayOfObjects(arrayOfNames, arrayOfSalaries, arrayOfProfessions));
+
+// Решение 2 с урока
+
 const arrayOfNames = ["Anatoly", "Maria", "Pavel", "Svetlana"];
 const arrayOfSalaries = [1000, 2000, 500, 0];
 const arrayOfProfessions = ["AQA", "Developer", "DevOps", "QA"];
 
 function getArrayOfObjects(names, salaries, professions) {
-	return names.map((name, index) => ({
-		name,
-		salary: salaries[index],
-		profession: professions[index]
-	}));
+	return names.reduce((result, name, index) => {
+		result.push({
+			name,
+			salary: salaries[index],
+			profession: professions[index]
+		});
+		return result;
+	}, []);
 }
 
 console.log(getArrayOfObjects(arrayOfNames, arrayOfSalaries, arrayOfProfessions));
-
-// Решение 2 с урока
-
