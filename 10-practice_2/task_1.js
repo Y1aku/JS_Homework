@@ -4,7 +4,7 @@
 Функция должна возвращать новый массив с объектами, у которых свойство age больше заданного числа.
 
 Дополнительно:
-- передавать ключ по которому ищем;
+- передавать ключ по которому ищем полное соответствие;
 */
 
 const people = [
@@ -14,14 +14,8 @@ const people = [
     { name: "Charlie", age: 30 }
 ];
 
-function filterByAge(array, key, value) {
-
-    if (key === "name") {
-        return array.find(element => element.name === value);
-    } else if (key === "age") {
-        return array.filter(element => element.age > value);
-    }
-	
+function filterBy(array, key, value) {
+    return array.filter( element => element[key] === value);
 };
 
-console.log(filterByAge(people, "name", "Charlie"));
+console.log(filterBy(people, "name", "Alice"));
