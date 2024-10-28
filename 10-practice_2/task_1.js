@@ -7,6 +7,23 @@
 - передавать ключ по которому ищем полное соответствие;
 */
 
+// Main solution
+
+// const people = [
+//     { name: "Alice", age: 25 },
+//     { name: "Alice", age: 35 },
+//     { name: "Bob", age: 20 },
+//     { name: "Charlie", age: 30 }
+// ];
+
+// function filterByAge(array, number) {
+// 	return array.filter((element, index, array) => element.age > number);
+// };
+
+// console.log(filterByAge(people, 21));
+
+// Extra solution
+
 const people = [
     { name: "Alice", age: 25 },
     { name: "Alice", age: 35 },
