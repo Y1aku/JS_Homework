@@ -19,8 +19,8 @@ console.log(valuesOfObject);
 
 const entriesOfObject = Object.entries(character)
 
-for (let i = 0; i < entriesOfObject.length; i++) {
-    console.log(`key = ${entriesOfObject[i][0]}, value = ${entriesOfObject[i][1]}`);
+for (const [key, value] of entriesOfObject) {
+    console.log(`key = ${key}, value = ${value}`);
 };
 
 // 4. Проверить, есть ли в объекте ключ salary, результат вывести в консоль
