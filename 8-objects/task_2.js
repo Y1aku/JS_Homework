@@ -8,10 +8,8 @@ const characters = [
 // Объект должен иметь поля name (string) и age (number)
 
 function addCharacter(name, age) {
-	const newObject = {};
-	newObject.name = name;
-	newObject.age = age;
-	return characters.push(newObject);
+	const newObject = { name, age };
+	characters.push(newObject);
 };
 
 addCharacter('Frank', 52);
