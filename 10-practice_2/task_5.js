@@ -1,10 +1,6 @@
-/*
-Есть массив компаний со своими департаментами. Нужно написать:
+//Есть массив компаний со своими департаментами. Нужно написать:
 
-- функцию, которая будет возвращать общее количество сотрудников;
-- функцию, которая будет принимать 1 аргумент (id отдела или название отдела)
-и возвращать название предприятие, к которому относится данный отдел;
-*/
+// - функцию, которая будет возвращать общее количество сотрудников;
 
 const enterprises = [
     {
@@ -62,10 +58,24 @@ const enterprises = [
     },
 ];
   
-function getTotalEmployeesCount(arr) {
-    return arr.reduce((total, enterprise) => {
-        return total + enterprise.departments.reduce((result, department) => department.employees_count + result, 0);
-    }, 0);
-};
+// function getTotalEmployeesCount(arr) {
+//     return arr.reduce((total, enterprise) => {
+//         return total + enterprise.departments.reduce((result, department) => department.employees_count + result, 0);
+//     }, 0);
+// };
   
-console.log(getTotalEmployeesCount(enterprises));
+// console.log(getTotalEmployeesCount(enterprises));
+
+// - функцию, которая будет принимать 1 аргумент (id отдела или название отдела)
+// и возвращать предприятие, к которому относится данный отдел;
+
+function getEnterprise(idOrName) {
+	const foundEnterprise = enterprises.find((enterpise) => {
+		return enterpise.departments.find((department) => {
+			return department.id === idOrName || department.name === idOrName;
+		});
+	});
+	return foundEnterprise;
+};
+
+console.log(getEnterprise(10));
