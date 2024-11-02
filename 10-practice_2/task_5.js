@@ -1,5 +1,6 @@
 //Есть массив компаний со своими департаментами. Нужно написать:
 
+// ЗАДАЧА 1
 // - функцию, которая будет возвращать общее количество сотрудников;
 
 const enterprises = [
@@ -66,16 +67,47 @@ const enterprises = [
   
 // console.log(getTotalEmployeesCount(enterprises));
 
+// ЗАДАЧА 2
 // - функцию, которая будет принимать 1 аргумент (id отдела или название отдела)
 // и возвращать предприятие, к которому относится данный отдел;
 
-function getEnterprise(idOrName) {
-	const foundEnterprise = enterprises.find((enterpise) => {
-		return enterpise.departments.find((department) => {
-			return department.id === idOrName || department.name === idOrName;
+// function getEnterprise(idOrName) {
+// 	const foundEnterprise = enterprises.find((enterpise) => {
+// 		return enterpise.departments.find((department) => {
+// 			return department.id === idOrName || department.name === idOrName;
+// 		});
+// 	});
+// 	return foundEnterprise;
+// };
+
+// console.log(getEnterprise(10));
+
+// ЗАДАЧА 3
+// Написать функцию, которая будет добавлять предприятие.
+// В качестве аргумента должно приниматься название предприятия.
+// Каждый id на любом уровне вложенности должен быть уникальным.
+
+function getNewId(arr = enterprises) {
+	const ids = [];
+	arr.forEach(enterprise => {
+		ids.push(enterprise.id);
+		enterprise.departments.forEach(department => {
+			ids.push(department.id);
 		});
 	});
-	return foundEnterprise;
+	const maxId = Math.max(...ids);
+	return maxId + 1;
 };
 
-console.log(getEnterprise(10));
+console.log(getNewId());
+
+function addEnterprise(name) {
+	enterprises.push({
+		id: getNewId(),
+		name,
+		departments: []
+	});
+};
+
+addEnterprise('Рога и Копыта');
+console.log(enterprises);
