@@ -17,5 +17,26 @@ const qa = {
     }
 };
 
-console.log(qa.getInfo('Hello!'));
+// console.log(qa.getInfo('Hello!'));
 
+/*
+2. Changing the context
+
+Создайте объект `anotherQa` с полями `name`, `age`, `salary`, значения в которых будут отличны от объекта qa
+
+Вызовите метод `getInfo` объекта `qa` c контекстом вызова объекта `anotherQa` с помощью метода `bind()`
+
+Вызовите метод getInfo объекта qa c контекстом вызова объекта anotherQa с помощью метода call()
+
+Вызовите метод getInfo объекта qa c контекстом вызова объекта anotherQa с помощью метода apply()
+*/
+
+const anotherQa = {
+    name: 'Tom',
+    age: 25,
+    salary: '3000 $'
+};
+
+console.log(qa.getInfo.bind(anotherQa)('Hello!'));
+console.log(qa.getInfo.call(anotherQa, 'Hello!'));
+console.log(qa.getInfo.apply(anotherQa, ['Hello!']));
