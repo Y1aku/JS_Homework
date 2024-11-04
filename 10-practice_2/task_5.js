@@ -115,19 +115,9 @@ const enterprises = [
 // ЗАДАЧА 4
 // Написать функцию, которая будет добавлять департамент
 
-// Возьмем функцию getNewId из задачи №3
+// Возьмем функцию getNewId из задачи №3 и перепишем ее
 
-function getNewId(arr = enterprises) {
-	const ids = [];
-	arr.forEach(enterprise => {
-		ids.push(enterprise.id);
-		enterprise.departments.forEach(department => {
-			ids.push(department.id);
-		});
-	});
-	const maxId = Math.max(...ids);
-	return maxId + 1;
-};
+const getNewId = (arr = enterprises) => Math.max(...arr.flatMap((ent) => [...ent.departments.map((dep) => dep.id), ent.id])) + 1;
 
 function addDepartment(enterpiseId, name, employees_count) {
     const newDepartment = {
