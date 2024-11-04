@@ -115,7 +115,7 @@ const enterprises = [
 // ЗАДАЧА 4
 // Написать функцию, которая будет добавлять департамент
 
-// Возьмем функцию getNewId из задачи №3 и перепишем ее
+// Возьмем функцию getNewId из задачи №3 и перепишем ее (ЗАДАЧА №5)
 
 const getNewId = (arr = enterprises) => Math.max(...arr.flatMap((ent) => [...ent.departments.map((dep) => dep.id), ent.id])) + 1;
 
