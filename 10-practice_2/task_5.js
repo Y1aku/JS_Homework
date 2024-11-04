@@ -87,6 +87,36 @@ const enterprises = [
 // В качестве аргумента должно приниматься название предприятия.
 // Каждый id на любом уровне вложенности должен быть уникальным.
 
+// function getNewId(arr = enterprises) {
+// 	const ids = [];
+// 	arr.forEach(enterprise => {
+// 		ids.push(enterprise.id);
+// 		enterprise.departments.forEach(department => {
+// 			ids.push(department.id);
+// 		});
+// 	});
+// 	const maxId = Math.max(...ids);
+// 	return maxId + 1;
+// };
+
+// console.log(getNewId());
+
+// function addEnterprise(name) {
+// 	enterprises.push({
+// 		id: getNewId(),
+// 		name,
+// 		departments: []
+// 	});
+// };
+
+// addEnterprise('Рога и Копыта');
+// console.log(enterprises);
+
+// ЗАДАЧА 4
+// Написать функцию, которая будет добавлять департамент
+
+// Возьмем функцию getNewId из задачи №3
+
 function getNewId(arr = enterprises) {
 	const ids = [];
 	arr.forEach(enterprise => {
@@ -99,15 +129,15 @@ function getNewId(arr = enterprises) {
 	return maxId + 1;
 };
 
-console.log(getNewId());
-
-function addEnterprise(name) {
-	enterprises.push({
-		id: getNewId(),
-		name,
-		departments: []
-	});
+function addDepartment(enterpiseId, name, employees_count) {
+    const newDepartment = {
+	    id: getNewId(),
+        name,
+        employees_count: employees_count ?? 0
+    };
+    const enterpise = enterprises.find(element => element.id === enterpiseId);
+    enterpise.departments.push(newDepartment);
 };
 
-addEnterprise('Рога и Копыта');
-console.log(enterprises);
+addDepartment(9, 'Отдел сопровождения', 13);
+console.log(JSON.stringify(enterprises));
