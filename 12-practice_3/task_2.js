@@ -6,4 +6,11 @@ class Person {
 		this.name = name;
 		this.age = age;
 	};
+
+    greet() {
+        return `My name is ${this.name}. I'm ${this.age} years old.`
+    };
 };
+
+const person = new Person('Alex', 32);
+console.log(person.greet());
