@@ -39,9 +39,10 @@ class Person {
 };
 
 class Student extends Person {
+    #studentId;
 	constructor(name, age, studentId) {
 		super(name, age);
-		this.studentId = studentId;
+		this.#studentId = studentId;
 	};
 	
 	study() {
