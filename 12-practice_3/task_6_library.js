@@ -12,3 +12,26 @@
 удалять книги и выводить список всех книг.
 */
 
+class Book {
+    constructor(id, title, author, genre) {
+        this.id = id; // Уникальный идентификатор книги
+        this.title = title; // Название книги
+        this.author = author; // Автор книги
+        this.genre = genre; // Жанр книги
+    };
+};
+
+class Library {
+    constructor(name, address) {
+        this.name = name;
+        this.address = address;
+        this.books = []; // Массив для хранения всех книг в библиотеке
+    }
+};
+
+const book1 = new Book(1, 'The killer', 'M.E. Sorge', 'Fiction');
+console.log(book1);
+const library1 = new Library('Big Library', 'st. Leronto');
+console.log(library1);
+library1.books.push(book1);
+console.log(library1);
