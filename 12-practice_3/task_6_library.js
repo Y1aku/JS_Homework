@@ -19,6 +19,15 @@ class Book {
         this.author = author; // Автор книги
         this.genre = genre; // Жанр книги
     };
+
+    getDetails() {
+        return {
+            id: this.id,
+            title: this.title,
+            author: this.author,
+            genre: this.genre
+        };
+    };
 };
 
 class Library {
@@ -29,9 +38,10 @@ class Library {
     }
 };
 
-const book1 = new Book(1, 'The killer', 'M.E. Sorge', 'Fiction');
+const book1 = new Book(1, "1984", "George Orwell", "Dystopian");
 console.log(book1);
-const library1 = new Library('Big Library', 'st. Leronto');
-console.log(library1);
-library1.books.push(book1);
-console.log(library1);
+console.log(book1.getDetails());
+// const library1 = new Library('Big Library', 'st. Leronto');
+// console.log(library1);
+// library1.books.push(book1);
+// console.log(library1);
