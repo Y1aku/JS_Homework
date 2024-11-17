@@ -35,13 +35,18 @@ class Library {
         this.name = name;
         this.address = address;
         this.books = []; // Массив для хранения всех книг в библиотеке
-    }
+    };
+
+    addBook(book) {
+        this.books.push(book);
+    };
 };
+
+const library1 = new Library('Big Library', 'st. Leronto');
 
 const book1 = new Book(1, "1984", "George Orwell", "Dystopian");
 console.log(book1);
 console.log(book1.getDetails());
-// const library1 = new Library('Big Library', 'st. Leronto');
-// console.log(library1);
-// library1.books.push(book1);
-// console.log(library1);
+
+library1.addBook(book1);
+console.log(library1);
