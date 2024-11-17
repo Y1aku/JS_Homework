@@ -14,10 +14,10 @@
 
 class Book {
     constructor(id, title, author, genre) {
-        this.id = id; // Уникальный идентификатор книги
-        this.title = title; // Название книги
-        this.author = author; // Автор книги
-        this.genre = genre; // Жанр книги
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
     };
 
     getDetails() {
@@ -34,7 +34,7 @@ class Library {
     constructor(name, address) {
         this.name = name;
         this.address = address;
-        this.books = []; // Массив для хранения всех книг в библиотеке
+        this.books = [];
     };
 
     addBook(book) {
@@ -44,10 +44,26 @@ class Library {
     getAllBooks() {
         return this.books;
     };
+
+    getBookByTitle(title) {
+        return this.books.find(book => book.title === title);
+    };
+
+    getBooksByAuthor(author) {
+        return this.books.filter(book => book.author === author);
+    };
+
+    getBooksByGenre(genre) {
+        return this.books.filter(book => book.genre === genre);
+    };
 };
 
 const library1 = new Library('Big Library', 'st. Leronto');
 
 const book1 = new Book(1, "1984", "George Orwell", "Dystopian");
+const book2 = new Book(2, "Animal Farm", "George Orwell", "Political Satire");
 library1.addBook(book1);
-console.log(library1.getAllBooks());
+library1.addBook(book2);
+// console.log(library1.getBookByTitle("1984"));
+// console.log(library1.getBooksByAuthor("George Orwell"));
+console.log(library1.getBooksByGenre("Dystopian"));
