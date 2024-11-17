@@ -40,13 +40,14 @@ class Library {
     addBook(book) {
         this.books.push(book);
     };
+
+    getAllBooks() {
+        return this.books;
+    };
 };
 
 const library1 = new Library('Big Library', 'st. Leronto');
 
 const book1 = new Book(1, "1984", "George Orwell", "Dystopian");
-console.log(book1);
-console.log(book1.getDetails());
-
 library1.addBook(book1);
-console.log(library1);
+console.log(library1.getAllBooks());
