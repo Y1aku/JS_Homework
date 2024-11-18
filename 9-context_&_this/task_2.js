@@ -16,10 +16,26 @@ function countOccurrences(arr) {
 console.log(countOccurrences(numbers));
 */
 
-const numbers = [1, 2, 2, 3, 4, 4, 4, 5];
+const numbers = [1, 2, 2, 3, 4, 4, 4, 5, 1];
 
 function countOccurrences(arr) {
-    // ваш код
+  const result = {};
+
+  arr.forEach(element => result[element] = (result[element] || 0) + 1);
+
+  return result;
 };
   
 console.log(countOccurrences(numbers));
+
+/*
+АЛГОРИТМ, КОТОРЫЙ ПОМОГ МНЕ РЕШИТЬ ЗАДАЧУ:
+
+1. Берем элемент массива
+2. Добавляем элемент массива как свойство объекта
+3. Считаем количество таких же элементов в массиве
+4. Добавляем полученное значение к свойству объекта
+5. Переходим к следующему элементу
+6. Проверяем есть ли в объекте свойство, которое равно взятому элементу
+7. Если да, то берем следующий элемент. Если нет, то повторяем действия с пункта 3
+*/
